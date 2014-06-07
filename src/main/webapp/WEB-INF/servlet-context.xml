@@ -28,7 +28,7 @@
 		<beans:property name="basename" value="messages" />
 	</beans:bean>
 
-	<context:component-scan base-package="pl.asseco.echoweb.web" />
+	<context:component-scan base-package="pl.echoweb.web" />
 
 	<resources mapping="/css/**" location="/css/" />
 

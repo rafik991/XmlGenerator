@@ -9,7 +9,7 @@
     <name>XmlGenerator</name>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <encoding>UTF-8</encoding>
         <springVersion>3.1.1.RELEASE</springVersion>
         <testPath>${project.build.directory}/testOutput.xml</testPath>
         <schema>${project.build.directory}/test-classes/polisy.xsd</schema>
@@ -32,7 +32,7 @@
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
-                    <encoding>UTF-8</encoding>
+                    <encoding>${encoding}</encoding>
                 </configuration>
             </plugin>
 
@@ -48,6 +48,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <encoding>${encoding}</encoding>
+                </configuration>
             </plugin>
 
             <plugin>
@@ -80,6 +84,20 @@
             </testResource>
         </testResources>
     </build>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>sonatype-oss-public</id>
+            <url>https://oss.sonatype.org/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
     <dependencies>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -207,17 +225,6 @@
             <version>4.10</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.easymock</groupId>
-            <artifactId>easymock</artifactId>
-            <version>3.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>struts</groupId>
-            <artifactId>struts</artifactId>
-            <version>1.2.9</version>
-        </dependency>
 
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -256,27 +263,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.dbunit</groupId>
-            <artifactId>dbunit</artifactId>
-            <version>2.4.8</version>
-        </dependency>
-
-        <dependency>
-            <groupId>xmlunit</groupId>
-            <artifactId>xmlunit</artifactId>
-            <version>1.3</version>
-        </dependency>
-
-        <dependency>
             <groupId>postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>9.1-901.jdbc4</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-servlet</artifactId>
-            <version>8.1.3.v20120416</version>
         </dependency>
 
         <dependency>
@@ -297,18 +286,26 @@
             <version>2.3</version>
         </dependency>
 
+
+        <dependency>
+            <groupId>spy</groupId>
+            <artifactId>spymemcached</artifactId>
+            <version>2.8.1</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <id>sonatype-oss-public</id>
-            <url>https://oss.sonatype.org/content/groups/public</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
+    <repositories>
+        <repository>
+            <id>spy</id>
+            <name>Spy Repository</name>
+            <layout>default</layout>
+            <url>http://files.couchbase.com/maven2/</url>
             <snapshots>
-                <enabled>true</enabled>
+                <enabled>false</enabled>
             </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
+        </repository>
+    </repositories>
+
 </project>
