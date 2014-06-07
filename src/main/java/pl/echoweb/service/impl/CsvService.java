@@ -1,4 +1,4 @@
-package pl.echoweb.service;
+package pl.echoweb.service.impl;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -20,6 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import pl.echoweb.dao.ITemplateDAO;
 import pl.echoweb.model.entity.TemplateEntity;
+import pl.echoweb.service.ICsvService;
 
 @Service("CsvService")
 @Transactional

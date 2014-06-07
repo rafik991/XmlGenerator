@@ -1,4 +1,4 @@
-package pl.echoweb.service;
+package pl.echoweb.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,9 +11,10 @@ import org.springframework.transaction.annotation.Transactional;
 import pl.echoweb.dao.ITemplateDAO;
 import pl.echoweb.model.dto.TemplateDTO;
 import pl.echoweb.model.entity.TemplateEntity;
+import pl.echoweb.service.ITemplateService;
 
 /**
- * Klasa implementujaca interfejs {@link ITemplateService}
+ * Klasa implementujaca interfejs {@link pl.echoweb.service.ITemplateService}
  * 
  * @author rafal.machnik
  * 

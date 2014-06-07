@@ -10,7 +10,9 @@
 
     <properties>
         <encoding>UTF-8</encoding>
-        <springVersion>3.1.1.RELEASE</springVersion>
+        <springVersion>4.0.2.RELEASE</springVersion>
+        <spring-security-version>3.2.4.RELEASE</spring-security-version>
+        <hibernate.version>4.3.0.Final</hibernate.version>
         <testPath>${project.build.directory}/testOutput.xml</testPath>
         <schema>${project.build.directory}/test-classes/polisy.xsd</schema>
         <templatePath>${project.build.directory}/test-classes/xml.vm</templatePath>
@@ -148,21 +150,16 @@
             <version>2.5</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>${springVersion}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-struts</artifactId>
-            <version>${springVersion}</version>
-        </dependency>
-
+        <!-- Spring 4 dependencies -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
+            <version>${springVersion}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
             <version>${springVersion}</version>
         </dependency>
 
@@ -172,15 +169,16 @@
             <version>${springVersion}</version>
         </dependency>
 
+
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-beans</artifactId>
+            <artifactId>spring-web</artifactId>
             <version>${springVersion}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
+            <artifactId>spring-webmvc</artifactId>
             <version>${springVersion}</version>
         </dependency>
 
@@ -192,7 +190,25 @@
 
         <dependency>
             <groupId>org.springframework</groupId>
+            <artifactId>spring-remoting</artifactId>
+            <version>2.0.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${springVersion}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
+            <version>${springVersion}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
             <version>${springVersion}</version>
         </dependency>
 
@@ -201,22 +217,23 @@
             <artifactId>spring-context-support</artifactId>
             <version>${springVersion}</version>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-core</artifactId>
-            <version>${springVersion}</version>
+            <version>${spring-security-version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
-            <version>${springVersion}</version>
+            <version>${spring-security-version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
-            <version>${springVersion}</version>
+            <version>${spring-security-version}</version>
         </dependency>
 
         <dependency>
@@ -226,11 +243,25 @@
             <scope>test</scope>
         </dependency>
 
+        <!--hibernate dependency-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>4.1.2.Final</version>
+            <version>${hibernate.version}</version>
         </dependency>
+
 
         <dependency>
             <groupId>javax.validation</groupId>
@@ -238,22 +269,11 @@
             <version>1.0.0.GA</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>4.3.0.Final</version>
-        </dependency>
 
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.16</version>
-        </dependency>
-
-        <dependency>
-            <groupId>hsqldb</groupId>
-            <artifactId>hsqldb</artifactId>
-            <version>1.8.0.10</version>
         </dependency>
 
         <dependency>
@@ -285,7 +305,6 @@
             <artifactId>commons-io</artifactId>
             <version>2.3</version>
         </dependency>
-
 
         <dependency>
             <groupId>spy</groupId>

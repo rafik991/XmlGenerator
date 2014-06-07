@@ -1,4 +1,4 @@
-package pl.echoweb.service;
+package pl.echoweb.service.impl;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -12,6 +12,7 @@ import pl.echoweb.dao.IUserDAO;
 import pl.echoweb.dao.IUserRoleDAO;
 import pl.echoweb.model.dto.UserDTO;
 import pl.echoweb.model.entity.UserEntity;
+import pl.echoweb.service.IUserService;
 import pl.echoweb.util.SHA1;
 
 @Service("UserService")

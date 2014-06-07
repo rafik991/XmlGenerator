@@ -40,6 +40,7 @@ import pl.echoweb.web.model.validator.TemplateModelValidator;
  * 
  */
 @Controller
+@RequestMapping("/app")
 public class TemplateController {
 
 	@Autowired

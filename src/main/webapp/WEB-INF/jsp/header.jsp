@@ -23,8 +23,10 @@
 		<li><a href="addTemplate">Dodaj szablon</a></li>
 		<li><a href="help">Pomoc</a></li>
 		<!-- li><a href="<%out.print(bsrl);%>/uploadFile" >Dodaj plik Excel</a></li-->
-		<li><a href="<c:url value="/j_spring_security_logout" />">
-				Logout</a>
+        <li><a
+               href="login">Zaloguj</a>  </li>
+
+        </li>
 	</ul>
 </nav>
 <!--[if IE ]>

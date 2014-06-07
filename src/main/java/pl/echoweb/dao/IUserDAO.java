@@ -9,6 +9,8 @@ public interface IUserDAO {
 
 	public UserEntity getUser(Long id);
 
+    public UserEntity getUser(String email);
+
 	public Long createUser(UserEntity user);
 
 	public boolean deleteUser(Long id);
