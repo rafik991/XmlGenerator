@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
+<fieldset>
+	<legend>Instrukcja użytkowania</legend>
+	<h3>Tworzenie szablonu</h3>
+	<h4>Słownik</h4>
+	<dl>
+		<dt style="text-align: left">
+			<b><a href="resources/polisyZarejestrowanyPrywatnyKrajowy.xml"
+				type="application/rdf+xml">Szablon</a></b>
+		</dt>
+		<dd style="text-align: left">
+			Szablon powinien zawierać tagi poprzedzone znakiem <b>$</b>, ktore
+			poźniej musza znajdować sie w Excelu przyklad:
+			<code>&lt;XML&gt;$DANA&lt;/XML&gt;</code>
+			. Taka definicja szablonu jest konieczna do poprawnego działania
+			aplikacji.
+		</dd>
+		<dt style="text-align: left">
+			<b> <a href="resources/polisyZarejestrowanyPrywatnyKrajowy.xls"
+				type="application/vnd.ms-excel">Plik Excel</a></b>
+		</dt>
+		<dd style="text-align: left">
+			Wlaściwie przygotowany plik z rozszerzeniem <b>'.xls</b> lub <b>'.csv(separatorem
+				w pliku csv musi być! ';')</b> z nagłowkami które zgadzają się z tymi w
+			szablonie. Plik csv generujemy z excela biarac zapisz jako wybieramy
+			csv rozdzielan przecinkami.
+		</dd>
+
+	</dl>
+
+
+
+</fieldset>

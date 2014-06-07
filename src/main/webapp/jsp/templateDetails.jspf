@@ -1,0 +1,24 @@
+
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<fieldset>
+	<legend>Szczegoly szablonu</legend>
+	<table>
+		<form:form commandName="Template">
+			<form:hidden path="id" />
+			<tr>
+				<td>Nazwa szablonu: <form:input path="templateName"
+						readonly="true" /></td>
+			</tr>
+
+			<td><form:textarea path="template" 
+					cssClass="textareaBig" readonly="true" /></td>
+			<tr>
+				<td><input type="submit" value="Pobierz szablon Excel" />
+			<tr>
+		</form:form>
+	</table>
+</fieldset>

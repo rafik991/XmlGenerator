@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
+<fieldset>
+	<legend>Wprowadz plik Excel(max 45mb) lub CSV z danymi do generaowania w xml.</legend>
+	<form:form commandName="Template" method="post" action=""
+		enctype="multipart/form-data">
+		<form:hidden path="id" />
+		<form:hidden path="template" />
+		<form:hidden path="templateName" />
+		<table>
+			<tr>
+				<td><form:input path="excelData" type="file" /></td>
+				<td><form:errors path="excelData" cssClass="frmerr" />
+			</tr>
+			<tr>
+				<td><input type="submit" value="Generuj" /></td>
+			</tr>
+		</table>
+		<form:errors path="excel" cssClass="frmerr" />
+	</form:form>
+</fieldset>

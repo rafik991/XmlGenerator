@@ -1,0 +1,43 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
+<fieldset>
+	<legend>Edycja szablonu</legend>
+	<table>
+		<form:form commandName="Template">
+			<form:hidden path="id" />
+			
+			<tr>
+				<td>Nazwa szablonu:</td>
+			</tr>
+			<tr>
+				<td><form:textarea path="templateName" cssClass="textareaSmall" />
+			</tr>
+			<tr>
+				<td>Nagłówek</td>
+			</tr>
+			<tr>
+
+				<td><form:textarea path="header" cssClass="textareaSmall" /></td>
+			</tr>
+			<tr>
+				<td><form:textarea path="template" rows="40" cols="100"
+						cssClass="textareaBig" /></td>
+			</tr>
+			<tr>
+				<td>Stopka</td>
+			</tr>
+			<tr>
+
+				<td><form:textarea path="footer" cssClass="textareaSmall" /></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Zapisz zmiany" /></td>
+			</tr>
+
+		</form:form>
+	</table>
+</fieldset>

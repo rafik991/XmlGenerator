@@ -1,0 +1,47 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
+<fieldset>
+	<legend>Dodawanie szablonu wraz z plikiem przykladowym</legend>
+	<form:form name="frm" method="post" action=""
+		enctype="multipart/form-data" commandName="Template">
+		<table>
+			<tr>
+				<td>Wybierz plik szablonu</td>
+				<td align="left"><form:input type="file" id="fileData" path="fileData" /></td>
+				<td><form:errors path="fileData" cssClass="frmerr" />
+			</tr>
+			<tr>
+				<td>Podaj nazwe szablonu</td>
+				<td align="left"><form:input path="templateName"
+						id="templateName" /></td>
+				<td><form:errors path="templateName" cssClass="frmerr" /></td>
+			</tr>
+			<tr>
+				<td>Podaj naglowek szablonu</td>
+				<td><form:textarea path="header" cssClass="textareaMiddle" /></td>
+				<td><form:errors path="header" cssClass="frmerr" /></td>
+			</tr>
+
+			<tr>
+				<td>Podaj stopke szablonu</td>
+				<td><form:textarea path="footer" cssClass="textareaMiddle" /></td>
+				<td><form:errors path="footer" cssClass="frmerr" /></td>
+			</tr>
+			<tr>
+				<td>Wprowadz przykladowy plik Excel</td>
+				<td align="left"><form:input type="file" path="excelData" id="excelData" />
+				<td><form:errors path="excelData" cssClass="frmerr" />
+			</tr>
+			<tr>
+				<td><input type="submit" value="Dodaj" /></td>
+			</tr>
+
+		</table>
+		<form:errors path="excel" cssClass="frmerr" />
+	</form:form>
+</fieldset>
+
