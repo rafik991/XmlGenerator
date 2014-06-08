@@ -9,7 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <!-- link rel="stylesheet" href="main.css" type="text/css"></link-->
 <link rel="stylesheet" type="text/css"
-	href="<spring:url value='/css/main.css'/>" />
+	href="<spring:url value='/mvc/css/main.css'/>" />
 	<link rel="stylesheet" type="text/css"
-	href="<spring:url value='/css/menu.css'/>" />
+	href="<spring:url value='/mvc/css/menu.css'/>" />
 </head>

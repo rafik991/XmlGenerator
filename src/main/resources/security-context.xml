@@ -22,8 +22,8 @@
 
         <security:logout
                 invalidate-session="true"
-                logout-success-url="/mvc/auth/login"
-                logout-url="/mvc/auth/logout"/>
+                logout-success-url="/mvc/auth/logout"
+                logout-url="/mvc/auth/sign_out"/>
 
     </security:http>
 

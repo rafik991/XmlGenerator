@@ -17,9 +17,9 @@
         <schema>${project.build.directory}/test-classes/polisy.xsd</schema>
         <templatePath>${project.build.directory}/test-classes/xml.vm</templatePath>
         <xlsPath>Pliki/test.xls</xlsPath>
-        <jelastic-maven-plugin.email>rafal@mailinator.com</jelastic-maven-plugin.email>
-        <jelastic-maven-plugin.password>Tv77418LXy</jelastic-maven-plugin.password>
-        <jelastic-maven-plugin.environment>env-1826706</jelastic-maven-plugin.environment>
+        <jelastic-maven-plugin.email>raf@mailinator.com</jelastic-maven-plugin.email>
+        <jelastic-maven-plugin.password>nnEVqXtTiw</jelastic-maven-plugin.password>
+        <jelastic-maven-plugin.environment>env-1359909</jelastic-maven-plugin.environment>
         <jelastic-maven-plugin.api_hoster>app.jelastic.dogado.eu</jelastic-maven-plugin.api_hoster>
     </properties>
 

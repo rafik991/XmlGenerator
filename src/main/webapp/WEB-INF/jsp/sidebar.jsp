@@ -3,7 +3,7 @@
 <!--[if !IE]>
 <div style="visibility: hidden;">
 <![endif] -->	
-<aside>Pasek boczny</aside>
+<aside>Sidebar</aside>
 <!--[if !IE]>
 </div>
 <![endif] -->

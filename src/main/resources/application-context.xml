@@ -46,7 +46,7 @@
     </bean>
 
     <bean id="dataSourceJndi" class="org.springframework.jndi.JndiObjectFactoryBean">
-        <property name="jndiName" value="java:comp/env/jdbc/JNDI_and_DS"/>
+        <property name="jndiName" value="java:comp/env/jdbc/JNDI_and_DS/production"/>
         <property name="resourceRef" value="true"/>
     </bean>
 

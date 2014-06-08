@@ -4,5 +4,10 @@
               maxActive="100" maxIdle="30" maxWait="10000" username="postgres"
               password="root" driverClassName="org.postgresql.Driver"
               url="jdbc:postgresql://localhost:5432/EchoWeb" validationQuery="select 1"/>
+    <Resource name="jdbc/JNDI_and_DS/production" auth="Container" type="javax.sql.DataSource"
+              maxActive="100" maxIdle="30" maxWait="10000" username="webadmin"
+              password="EBbcgf93sg" driverClassName="org.postgresql.Driver"
+              url="jdbc:postgresql://postgres-env-1359909.jelastic.dogado.eu/postgres" validationQuery="select 1"/>
+
 </Context>
 
