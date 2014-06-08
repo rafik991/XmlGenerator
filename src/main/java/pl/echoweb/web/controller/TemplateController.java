@@ -77,7 +77,7 @@ public class TemplateController {
 			templateDTO.setHeader(template.getHeader());
 			templateDTO.setFooter(template.getFooter());
 			templateService.addTemplate(templateDTO);
-			return "redirect:/templateList";
+			return "redirect:/mvc/templateList";
 		} else {
 
 			return "addTemplate";
@@ -125,7 +125,7 @@ public class TemplateController {
 		templateDTO.setHeader(templateModel.getHeader());
 		templateDTO.setFooter(templateModel.getFooter());
 		templateService.updateTemplate(templateDTO);
-		return "redirect:/templateList";
+		return "redirect:/mvc/templateList";
 
 	}
 
@@ -210,7 +210,7 @@ public class TemplateController {
 			templateModelList.add(mod);
 		}
 		model.addAttribute("TemplateList", templateModelList);
-		return "redirect:/templateList";
+		return "redirect:/mvc/templateList";
 	}
 
 	@RequestMapping(value = "/generateXml/{templateId}", method = RequestMethod.GET)

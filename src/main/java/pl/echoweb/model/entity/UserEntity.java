@@ -1,13 +1,6 @@
 package pl.echoweb.model.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "USER_RECORD")
@@ -34,7 +27,7 @@ public class UserEntity {
 	@Column(name = "EMAIL")
 	private String email;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private UserRoleEntity role;
 
 	@Column(name = "ACTIVE", columnDefinition = "BOOLEAN NOT NULL DEFAULT true")

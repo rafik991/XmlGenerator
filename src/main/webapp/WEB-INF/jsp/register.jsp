@@ -6,7 +6,7 @@
 	<jsp:include page="header.jsp"></jsp:include>
 	<div id="content">
 		<div id="mainContent">
-		<%@ include file="login.jspf"%></div>
+		<%@ include file="register.jspf"%></div>
 		<jsp:include page="sidebar.jsp"></jsp:include>
 	</div>
 	<jsp:include page="footer.jsp"></jsp:include>

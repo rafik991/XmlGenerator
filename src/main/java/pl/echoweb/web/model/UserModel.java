@@ -6,7 +6,7 @@ public class UserModel {
 	private String lastName;
 	private String login;
 	private String password;
-	private String retypePasswordl;
+	private String retypePassword;
 	private String email;
 	private String token;
 
@@ -42,12 +42,12 @@ public class UserModel {
 		this.password = password;
 	}
 
-	public String getRetypePasswordl() {
-		return retypePasswordl;
+	public String getRetypePassword() {
+		return retypePassword;
 	}
 
-	public void setRetypePasswordl(String retypePasswordl) {
-		this.retypePasswordl = retypePasswordl;
+	public void setRetypePassword(String retypePassword) {
+		this.retypePassword = retypePassword;
 	}
 
 	public String getEmail() {
