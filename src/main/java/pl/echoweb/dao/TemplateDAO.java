@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import pl.echoweb.model.entity.TemplateEntity;
+import pl.echoweb.util.MemCachedProvider;
 
 /**
  * Klasa implementujaca interfejs {@link ITemplateDAO}.
@@ -21,6 +22,9 @@ public class TemplateDAO implements ITemplateDAO {
 
 	@Autowired
 	private SessionFactory mySessionFactory;
+
+    @Autowired
+    MemCachedProvider memCachedProvider;
 
 	@Override
 	public TemplateEntity getTemplate(Long id) {
