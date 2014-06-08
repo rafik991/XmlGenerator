@@ -25,7 +25,7 @@ import java.security.NoSuchAlgorithmException;
  * @author rafal.machnik
  */
 @Controller
-@RequestMapping("/")
+@RequestMapping("/app/")
 public class IndexController {
 
 

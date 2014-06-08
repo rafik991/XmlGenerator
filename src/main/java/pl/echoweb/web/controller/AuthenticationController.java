@@ -60,9 +60,18 @@ public class AuthenticationController {
         user.setRole("ROLE_USER");
         userService.createUser(user);
 
-        return "rediredt:/mvc/app/";
+        return "redirect:/mvc/app/index";
 
 
+    }
+
+    @RequestMapping(value = "accessDenied", method = RequestMethod.GET)
+    public String accessDenied() {
+        return "accessDenied";
+    }
+    @RequestMapping(value = "logout", method = RequestMethod.GET)
+    public String logout() {
+        return "logout";
     }
 
 

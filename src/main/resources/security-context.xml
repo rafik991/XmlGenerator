@@ -17,8 +17,8 @@
 
         <security:form-login
                 login-page="/mvc/auth/login"
-                authentication-failure-url="/mvc/auth/login"
-                default-target-url="/mvc/app/"/>
+                authentication-failure-url="/mvc/auth/accessDenied"
+                default-target-url="/mvc/app/index"/>
 
         <security:logout
                 invalidate-session="true"

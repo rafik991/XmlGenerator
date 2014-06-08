@@ -40,7 +40,7 @@ import pl.echoweb.web.model.validator.TemplateModelValidator;
  * 
  */
 @Controller
-@RequestMapping("/app")
+@RequestMapping("/app/")
 public class TemplateController {
 
 	@Autowired
@@ -58,13 +58,13 @@ public class TemplateController {
 	TemplateModelValidator validator = new TemplateModelValidator();
 	GenerateValidator generateValidator = new GenerateValidator();
 
-	@RequestMapping(value = "/addTemplate", method = RequestMethod.GET)
+	@RequestMapping(value = "addTemplate", method = RequestMethod.GET)
 	public String showForm(Model model) {
 		model.addAttribute("Template", new TemplateModel());
 		return "addTemplate";
 	}
 
-	@RequestMapping(value = "/addTemplate", method = RequestMethod.POST)
+	@RequestMapping(value = "addTemplate", method = RequestMethod.POST)
 	public String handleFormUpload(
 			@ModelAttribute("Template") TemplateModel template,
 			BindingResult result) throws IOException {
@@ -77,7 +77,7 @@ public class TemplateController {
 			templateDTO.setHeader(template.getHeader());
 			templateDTO.setFooter(template.getFooter());
 			templateService.addTemplate(templateDTO);
-			return "redirect:/mvc/templateList";
+			return "redirect:/mvc/app/templateList";
 		} else {
 
 			return "addTemplate";
@@ -85,7 +85,7 @@ public class TemplateController {
 
 	}
 
-	@RequestMapping(value = "/templateList", method = RequestMethod.GET)
+	@RequestMapping(value = "templateList", method = RequestMethod.GET)
 	public String getTemplates(Model model) {
 		List<TemplateDTO> templateDTOList = templateService.getTemplates();
 		List<TemplateListModel> templateModelList = new ArrayList<TemplateListModel>();
@@ -98,7 +98,7 @@ public class TemplateController {
 		return "templateList";
 	}
 
-	@RequestMapping(value = "/editTemplate/{templateId}", method = RequestMethod.GET)
+	@RequestMapping(value = "editTemplate/{templateId}", method = RequestMethod.GET)
 	public String showEditTemplate(
 			@PathVariable(value = "templateId") Long templateId, Model model) {
 		TemplateDTO templateDTO = templateService.getTemplate(templateId);
@@ -114,7 +114,7 @@ public class TemplateController {
 
 	}
 
-	@RequestMapping(value = "/editTemplate/{templateId}", method = RequestMethod.POST)
+	@RequestMapping(value = "editTemplate/{templateId}", method = RequestMethod.POST)
 	public String editTemplate(
 			@ModelAttribute("Template") TemplateModel templateModel) {
 		TemplateDTO templateDTO = templateService.getTemplate(templateModel
@@ -125,11 +125,11 @@ public class TemplateController {
 		templateDTO.setHeader(templateModel.getHeader());
 		templateDTO.setFooter(templateModel.getFooter());
 		templateService.updateTemplate(templateDTO);
-		return "redirect:/mvc/templateList";
+		return "redirect:/mvc/app/templateList";
 
 	}
 
-	@RequestMapping(value = "/templateDetails/{templateId}", method = RequestMethod.GET)
+	@RequestMapping(value = "templateDetails/{templateId}", method = RequestMethod.GET)
 	public String showDetails(
 			@PathVariable(value = "templateId") Long templateId, Model model) {
 		TemplateDTO templateDTO = templateService.getTemplate(templateId);
@@ -151,7 +151,7 @@ public class TemplateController {
 
 	}
 
-	@RequestMapping(value = "/getExcelTemplate/{templateId}", method = RequestMethod.GET)
+	@RequestMapping(value = "getExcelTemplate/{templateId}", method = RequestMethod.GET)
 	@ResponseBody
 	public String getExcelTemplate(
 			@PathVariable(value = "templateId") Long templateId,
@@ -175,7 +175,7 @@ public class TemplateController {
 
 	}
 
-	@RequestMapping(value = "/templateDetails/{templateId}", method = RequestMethod.POST)
+	@RequestMapping(value = "templateDetails/{templateId}", method = RequestMethod.POST)
 	public void getExcelTemplatePost(
 			@ModelAttribute("Template") TemplateModel model,
 			HttpServletResponse response) throws IOException {
@@ -195,7 +195,7 @@ public class TemplateController {
 
 	}
 
-	@RequestMapping(value = "/deleteTemplate/{templateId}", method = RequestMethod.GET)
+	@RequestMapping(value = "deleteTemplate/{templateId}", method = RequestMethod.GET)
 	public String deleteTemplate(@PathVariable("templateId") Long templateId,
 			Model model) {
 		templateService.deleteTemplate(templateId);
@@ -210,7 +210,7 @@ public class TemplateController {
 			templateModelList.add(mod);
 		}
 		model.addAttribute("TemplateList", templateModelList);
-		return "redirect:/mvc/templateList";
+		return "redirect:/mvc/app/templateList";
 	}
 
 	@RequestMapping(value = "/generateXml/{templateId}", method = RequestMethod.GET)
@@ -227,7 +227,7 @@ public class TemplateController {
 		return "generateXml";
 	}
 
-	@RequestMapping(value = "/generateXml/{templateId}", method = RequestMethod.POST)
+	@RequestMapping(value = "generateXml/{templateId}", method = RequestMethod.POST)
 	public String generateXmlPost(
 			@ModelAttribute("Template") TemplateModel template,
 			@PathVariable("templateId") Long templateId, BindingResult result,
