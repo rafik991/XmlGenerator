@@ -1,13 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Context path="/JNDI_and_DS">
-	<Resource name="jdbc/JNDI_and_DS" auth="Container" type="javax.sql.DataSource"
+	<Resource name="jdbc/JNDI_and_DS/localhost" auth="Container" type="javax.sql.DataSource"
               maxActive="100" maxIdle="30" maxWait="10000" username="postgres"
               password="root" driverClassName="org.postgresql.Driver"
               url="jdbc:postgresql://localhost:5432/EchoWeb" validationQuery="select 1"/>
-    <Resource name="jdbc/JNDI_and_DS/production" auth="Container" type="javax.sql.DataSource"
+    <Resource name="jdbc/JNDI_and_DS/jelastic" auth="Container" type="javax.sql.DataSource"
               maxActive="100" maxIdle="30" maxWait="10000" username="webadmin"
               password="EBbcgf93sg" driverClassName="org.postgresql.Driver"
-              url="jdbc:postgresql://postgres-env-1359909.jelastic.dogado.eu/postgres" validationQuery="select 1"/>
-
+              url="jdbc:postgresql://postgres-env-1359909.jelastic.dogado.eu:5432/postgres" validationQuery="select 1"/>
 </Context>
 
