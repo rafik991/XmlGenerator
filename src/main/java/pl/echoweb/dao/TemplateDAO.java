@@ -6,7 +6,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import pl.echoweb.model.entity.TemplateEntity;
-import pl.echoweb.util.MemCachedProvider;
+import pl.echoweb.util.CachedProvider;
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ public class TemplateDAO implements ITemplateDAO {
     private SessionFactory mySessionFactory;
 
     @Autowired
-    MemCachedProvider memCachedProvider;
+    CachedProvider memCachedProvider;
 
     @Override
     public TemplateEntity getTemplate(Long id) {
@@ -48,7 +48,7 @@ public class TemplateDAO implements ITemplateDAO {
         Criteria myCriteria = session.createCriteria(TemplateEntity.class);
         List<TemplateEntity> list = (List<TemplateEntity>) memCachedProvider.getObjectFromMemCache("templateEntityList");
         if (list == null || list.isEmpty())
-                    list = myCriteria.list();
+            list = myCriteria.list();
         return list;
     }
 
