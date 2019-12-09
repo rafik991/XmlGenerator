@@ -10,7 +10,7 @@
 
     <properties>
         <encoding>UTF-8</encoding>
-        <springVersion>4.0.2.RELEASE</springVersion>
+        <springVersion>5.2.2.RELEASE</springVersion>
         <spring-security-version>3.2.4.RELEASE</spring-security-version>
         <hibernate.version>4.3.0.Final</hibernate.version>
         <testPath>${project.build.directory}/testOutput.xml</testPath>
